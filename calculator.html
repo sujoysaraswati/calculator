@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+#calculato{
+	position:absolute;
+	left:43%;
+	background: gray;
+}
+input{
+	width:132px;
+	height:20px;
+	border:1px solid black;
+	border-radius: 0%;
+	cursor:not-allowed;
+	background: thistle;
+	color: sienna;
+	position: absolute;
+	left: 3px;
+
+}
+
+td{
+	width:33px;
+	height:33px;
+}
+
+
+button{
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:2px solid white;
+	background:yellow;
+	cursor:pointer;
+}
+
+button:hover{
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:2px solid white;
+	background:black;
+	color:yellow;
+}
+
+input{
+	width:132px;
+	cursor:not-allowed;
+}
+
+.oper{
+	background:lightgreen;
+	color:maroon;
+}
+.oper:hover{
+	background:maroon;
+	color:lightgreen;
+}
+
+
+.ewe{
+	background:red;
+	color:purple;
+}
+
+.ewe:hover{
+	background:purple;
+	color:red;
+}
+
+body{
+	background-color: lightseagreen;
+}
+</style>
+</head>
+<body>
+<div id="calculato">
+
+<table>
+<tr>
+<form name="o">
+<input placeholder="Click buttons" type="text" id="calculator" readonly><br><br><!-- I couldn't add signs with number, so I used text-->
+</form>
+</tr><tr>
+<td><button onclick="equalTo()" class="ewe">=</button></td>
+<td></td>
+<td></td>
+<td><button class="ewe" onclick="window.location.assign(location)">C</button></td>
+</tr><tr>
+<td><button onclick="add('1')">1</button></td>
+<td><button  onclick="add('2')">2</button></td>
+<td><button onclick="add('3')">3</button></td>
+<td><button onclick="add('+')" class="oper">+</button></td>
+</tr><tr>
+<td><button onclick="add('4')">4</button></td>
+<td><button onclick="add('5')">5</button></td>
+<td><button onclick="add('6')">6</button></td>
+<td><button onclick="add('-')" class="oper">-</button></td>
+</tr>
+<tr>
+<td><button onclick="add('7')">7</button></td>
+<td><button onclick="add('8')">8</button></td>
+<td><button onclick="add('9')">9</button></td>
+<td><button onclick="add('*')" class="oper">×</button></td>
+</tr><tr>
+<td><button style="font-size: 18pt" onclick="add('.')">.</button></td>
+<td><button onclick="add('0')">0</button></td>
+<td><button onclick="add('%')" class="oper">%</button></td>
+<td><button onclick="add('/')" class="oper">÷</button></td>
+</tr><tr>
+	<td></td>
+	<td><button onclick="add('(')">(</button></td>
+	<td><button onclick="add(')')">)</button></td>
+</tr>
+</table>
+</div>
+
+
+</body>
+<script>
+function add(x){
+	document.getElementById("calculator").value = document.getElementById("calculator").value + x;	
+}
+
+function equalTo(){
+	let x = document.getElementById("calculator").value
+	let y = eval(x)
+	document.getElementById("calculator").value = y
+}
+</script>
+</html>
